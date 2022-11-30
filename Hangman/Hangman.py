@@ -12,58 +12,47 @@ print(HANGMAN_ASCII_ART)
 
 MAXUS_TRIES = 6
 
-print("""picture 1:
-    x-------x
+HANGMAN_PHOTOS = {1:    """x-------x""",
+2:  """x-------x
+|
+|
+|
+|
+|""",
+3:  """x-------x
+|       |
+|       0
+|
+|
+|""",
+4:  """x-------x
+|       |
+|       0
+|       |
+|
+|""",
+5:  """x-------x
+|       |
+|       0
+|      /|\\
+|
+|""",
+6:  """x-------x
+|       |
+|       0
+|      /|\\
+|      /
+|""",
+7:  """x-------x
+|       |
+|       0
+|      /|\\
+|      / \\
+|"""}
 
-picture 2:
-    x-------x
-    |
-    |
-    |
-    |
-    |
 
-picture 3:
-    x-------x
-    |       |
-    |       0
-    |
-    |
-    |
-
-picture 4:
-    x-------x
-    |       |
-    |       0
-    |       |
-    |
-    |
-
-picture 5:
-    x-------x
-    |       |
-    |       0
-    |      /|\\
-    |
-    |
-
-picture 6:
-    x-------x
-    |       |
-    |       0
-    |      /|\\
-    |      /
-    |
-
-picture 7:
-    x-------x
-    |       |
-    |       0
-    |      /|\\
-    |      / \\
-    |
-""")
-
+def print_hangman(num_of_tries):
+    print(HANGMAN_PHOTOS[num_of_tries])
 
 def check_valid_input(letter_guessed, old_letters_guessed):
     if not letter_guessed.isalpha() or len(letter_guessed) > 1:
@@ -112,6 +101,7 @@ def main():
 
     word = input("Please enter a word:")
     print("_ " * len(word))
+    print_hangman(4)
 
 
 if __name__ == "__main__":
