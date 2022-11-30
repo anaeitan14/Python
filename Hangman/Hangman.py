@@ -89,6 +89,32 @@ def check_win(secret_word, old_letters_guessed):
             return False
     return True
 
+def choose_word(file_path, index):
+    secret_words = open(file_path, "r")
+    secret_words_list = []
+
+    for line in secret_words:
+        print(line)
+        secret_words_list.append(line)
+
+    print(type(secret_words_list))
+    print(secret_words_list)
+
+    count = 0
+
+    for word in secret_words_list:
+        if secret_words_list.count(word) != 1:
+            count+=1
+
+    if index >= len(secret_words_list):
+        specialWord = secret_words_list[0]
+    else:
+        specialWord = secret_words_list[index-1]
+
+    secret_words.close()
+
+    return count, specialWord
+
 def main():
     letter = input("Guess a letter: ")
     old = ['a','b','c','p','l','e']
@@ -103,6 +129,8 @@ def main():
     print("_ " * len(word))
     print_hangman(4)
 
+    res = choose_word("words.txt", 2)
+    print(res)
 
 if __name__ == "__main__":
     main()
