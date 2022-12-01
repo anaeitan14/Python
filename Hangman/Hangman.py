@@ -14,8 +14,12 @@ def print_start(num_guesses):
     print(num_guesses)
 
 
+
+
 def print_hangman(num_of_tries, HANGMAN_PHOTOS):
     print(HANGMAN_PHOTOS[num_of_tries])
+
+
 
 def check_valid_input(letter_guessed, old_letters_guessed):
     if not letter_guessed.isalpha() or len(letter_guessed) > 1:
@@ -23,6 +27,7 @@ def check_valid_input(letter_guessed, old_letters_guessed):
     elif letter_guessed.lower() in old_letters_guessed:
         return False
     return True
+
 
 
 
@@ -37,6 +42,8 @@ def try_update_letter_guessed(letter_guessed, old_letters_guessed):
         return False
 
 
+
+
 def show_hidden_word(secret_word, old_letters_guessed):
     letter_found = ""
     for letter in secret_word:
@@ -48,10 +55,14 @@ def show_hidden_word(secret_word, old_letters_guessed):
     return letter_found
 
 
+
+
 def check_increment_try(secret_word, user_letter):
     if user_letter in secret_word:
         return True
     return False
+
+
 
 
 def check_win(secret_word, old_letters_guessed):
@@ -59,6 +70,9 @@ def check_win(secret_word, old_letters_guessed):
         if letter not in old_letters_guessed:
             return False
     return True
+
+
+
 
 def choose_word(file_path, index):
     secret_words = open(file_path, "r")
@@ -77,8 +91,8 @@ def choose_word(file_path, index):
     secret_words.close()
 
     return count, words[index-1]
-def main():
-    game_loop()
+
+
 
 
 def game_loop():
@@ -147,6 +161,11 @@ def game_loop():
             print_hangman(num_of_tries, HANGMAN_PHOTOS)
 
     print("You lost... :(")
+
+
+
+def main():
+    game_loop()
 
 
 if __name__ == "__main__":
