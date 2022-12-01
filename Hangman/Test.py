@@ -17,12 +17,8 @@ def check_increment_try(secret_word, user_letter):
 
 
 if __name__ == "__main__":
+    file = open(r"C:\Users\Eitan\Games\ok.txt", "r")
 
-    user_letter = "t"
-    secret_word = "tank"
-    num_of_tries = 0
-
-    if not check_increment_try(secret_word, user_letter):  # if the letter doesn't appear in the secret word, increment the amount of guesses and change the hangman picture to print
-        num_of_tries += 1
-
-    print(num_of_tries)
+    text = file.read()
+    print(text)
+    file.close()
