@@ -57,14 +57,11 @@ def remove_duplicates(shop,product):
     shop.remove(product)
     print("Duplicates of",product,"removed")
 
-
-def count(shop):
-    pass
-
-
 def item_count(item):
     """Key function for sort parameter in sort_popularity function, returns the number of times an item appeared"""
     return item[-1]
+
+
 def sort_popularity(shop):
     """Sorts based on the popularity of an item"""
     popular_list = []
