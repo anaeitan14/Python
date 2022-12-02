@@ -34,9 +34,13 @@ def sort_alpha(shop):
 
 def illegal_prod(shop):
     """Takes a list as an argument and checks if it contains product that is considered illegal and prints it"""
+    illegal_exist = False
     for product in shop:
         if not product.isalpha() or len(product) < 3:
             print(product + " is an illegal product")
+            illegal_exist = True
+    if not illegal_exist:
+        print("No illegal items were found")
 
 def total_delete(shop,product):
     """Deletes all the occurrences of an item in the list"""
