@@ -40,21 +40,21 @@ def illegal_prod(shop):
 
 def total_delete(shop,product):
     """Deletes all the occurrences of an item in the list"""
-    if not prod_exist(shop,product):
+    if product not in shop:
         print("Cannot total delete item since it doesnt exist in the list")
         return
-    for item in shop[:]:
-        if item == product:
-            shop.remove(item)
-
+    while product in shop:
+        shop.remove(product)
 
 def remove_duplicates(shop,product):
     """Removes duplicate values from the list"""
-    if not prod_exist(shop,product) or prod_count(shop,product) == 1:
+    if product not in shop or shop.count(product) == 1:
         print("Cannot remove duplicates since product doesn't not exist or does not have duplicates")
         return
 
-    shop.remove(product)
+    while shop.count(product) != 1:
+        shop.remove(product)
+
     print("Duplicates of",product,"removed")
 
 def item_count(item):
@@ -70,18 +70,25 @@ def sort_popularity(shop):
         item_num = item+"-"+str(shop.count(item))
         popular_list.append(item_num)
 
-    for item in popular_list[:]:
-        if popular_list.count(item) > 1:
+    for item in popular_list:
+        while popular_list.count(item) != 1:
             popular_list.remove(item)
-
 
     popular_list.sort(reverse=True, key=item_count)
     print(popular_list)
 
 
+def ascii_func(item):
+    """Key function for ascii_sort function, returns the sum of ascii values of an item"""
+    total_sum = 0;
+    for letter in item:
+        total_sum += ord(letter)
+    return total_sum
 
 def ascii_sort(shop):
-    pass
+    """Sorts a list based on the ascii value of each item"""
+    shop.sort(key=ascii_func)
+    print("Sorted by ascii value")
 
 
 def print_menu():
@@ -116,16 +123,16 @@ def menu(shopping_string):
             case 2:
                 print("There are", len(shopping_list), "items")
             case 3:
-                product = input("Enter the product to search: ")
+                product = input("Enter the product to search: ").lower()
                 prod_exist(shopping_list,product)
             case 4:
-                product = input("Enter the product to count: ")
+                product = input("Enter the product to count: ").lower()
                 prod_count(shopping_list,product)
             case 5:
-                product = input("Enter the product to remove: ")
+                product = input("Enter the product to remove: ").lower()
                 remove_item(shopping_list,product)
             case 6:
-                product = input("Enter the product to add: ")
+                product = input("Enter the product to add: ").lower()
                 add_item(shopping_list,product)
             case 7:
                 sort_alpha(shopping_list)
@@ -134,10 +141,10 @@ def menu(shopping_string):
             case 9:
                 break
             case 10:
-                product = input("Enter the item to delete absolutely from the list: ")
+                product = input("Enter the item to delete absolutely from the list: ").lower()
                 total_delete(shopping_list,product)
             case 11:
-                product = input("Enter the product to remove duplicates from: ")
+                product = input("Enter the product to remove duplicates from: ").lower()
                 remove_duplicates(shopping_list,product)
             case 12:
                 sort_popularity(shopping_list)
@@ -145,7 +152,7 @@ def menu(shopping_string):
                 ascii_sort(shopping_list)
             case _:
                 print("Invalid input")
-                input("Press enter to go back to the mnu")
+
 
 def main():
     #shopping_string = input("Enter your shopping list: ")
