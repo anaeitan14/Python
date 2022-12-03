@@ -9,7 +9,8 @@ def prod_exist(shop,product):
 def prod_count(shop,product):
     """Takes a list as an argument and prints the amount of times an item repeats in the list"""
     if product not in shop:
-        print("Cannot print product because it doesnt exist in the list")
+        print("Cannot count",product,"as it does not exist in the list")
+        return
     print(product,"appears",shop.count(product),"times")
 
 
@@ -123,7 +124,7 @@ def menu(shopping_string):
 
         match choice:
             case 1:
-                print(shopping_list)
+                print(' '.join(shopping_list))
             case 2:
                 print("There are", len(shopping_list), "items")
             case 3:
@@ -159,8 +160,7 @@ def menu(shopping_string):
 
 
 def main():
-    #shopping_string = input("Enter your shopping list: ")
-    shopping_string = "Milk,Milk,Milk,Milk,Milk,Cottage,Potato,Potato,Teeth,table,table,table,table,table,table,table,table,computer,apple,Apple,cup"
+    shopping_string = input("Enter your shopping list: ")
     menu(shopping_string)
 
 
