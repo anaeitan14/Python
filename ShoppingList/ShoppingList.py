@@ -85,7 +85,7 @@ def sort_popularity(shop):
 
 def ascii_func(item):
     """Key function for ascii_sort function, returns the sum of ascii values of an item"""
-    total_sum = 0;
+    total_sum = 0
     for letter in item:
         total_sum += ord(letter)
     return total_sum
@@ -124,7 +124,7 @@ def menu(shopping_string):
 
         match choice:
             case 1:
-                print(' '.join(shopping_list))
+                print(shopping_list)
             case 2:
                 print("There are", len(shopping_list), "items")
             case 3:
@@ -168,5 +168,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
