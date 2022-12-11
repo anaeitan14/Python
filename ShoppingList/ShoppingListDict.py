@@ -189,7 +189,7 @@ def menu(shopping_dict, users):
 
 
 def multi_user(users):
-    """User management function, takes in the dictionary containing all the users and their inner dictionary,
+    """User management function, takes in the dictionary containing all the users and their inner dictionaries,
     checks if username already exists if not makes it a new key"""
     #"Potato,chips,cola,potato,table,table,Water,Water,potato,cola,cola,cola,cola,cola,cola,cola"
 
