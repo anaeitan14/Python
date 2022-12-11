@@ -69,7 +69,7 @@ def search_pattern(shopping_dict, pattern):
 
 
 def total_delete(shopping_dict, product):
-    """Totally deletes an item from the dictionary, checks if the item even exists in the dictionary beforhand"""
+    """Totally deletes an item from the dictionary, checks if the item even exists in the dictionary beforehand"""
     if product not in shopping_dict.keys():
         print("Cannot total delete item as it does not exist in the list")
         return
@@ -100,15 +100,14 @@ def remove_prod(shop_dict, item):
     if item not in shop_dict.keys():
         print("Cant remove item as it does not exist")
         return
-
-    if shop_dict[item] > 1:
+    elif shop_dict[item] > 1:
         shop_dict[item] -= 1
     else:
         del shop_dict[item]
 
 
 def count_prod(shop_dict, item):
-    """Counts how many items there are in the dictionary"""
+    """Counts how many times an item is in the dictionary"""
     if item not in shop_dict.keys():
         print("Cant count item as it does not exist")
         return
@@ -178,7 +177,8 @@ def menu(shopping_dict, users):
                 total_sum(shopping_dict)
             case 15:
                 print("Logout")
-                menu(users)
+                print(users)
+                multi_user(users)
             case 16:
                 top_three_items(shopping_dict)
             case 17:
