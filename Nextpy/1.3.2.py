@@ -6,3 +6,4 @@ def is_prime(number):
 
 print(is_prime(42))
 print(is_prime(43))
+print(is_prime(3))

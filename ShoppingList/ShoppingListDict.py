@@ -61,11 +61,11 @@ def search_pattern(shopping_dict, pattern):
     if pattern[0] == '*' and pattern[-1] == '*':
         for key, value in shopping_dict.items():
             if pattern[1:-1] in key:
-                print(key)
+                print(key, value)
     elif pattern[-1] == '*':
         for key, value in shopping_dict.items():
             if key.startswith(pattern[:-1]):
-                print(key)
+                print(key, value)
 
 
 def total_delete(shopping_dict, product):
