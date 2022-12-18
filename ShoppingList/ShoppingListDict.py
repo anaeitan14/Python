@@ -16,6 +16,7 @@ def print_menu():
 15) Logout
 16) Top 3 items
 17) Search by pattern
+18) Save
             """)
 
 
@@ -137,6 +138,14 @@ def string_to_dict(shopping_string):
     return new_dict
 
 
+def save_shoplist(shopping_dict):
+    shopping_file = open(r"C:\Users\Eitan\PycharmProjects\School", "w")
+
+    shopping_file.write(str(shopping_dict))
+
+    shopping_file.close()
+
+
 def menu(shopping_dict, users):
     """Main menu of the application"""
     choice = 0
@@ -184,6 +193,8 @@ def menu(shopping_dict, users):
             case 17:
                 pattern = input("Enter a pattern to search by: ")
                 search_pattern(shopping_dict, pattern)
+            case 18:
+                save_shoplist(shopping_dict)
             case _:
                 print("Invalid input")
 
