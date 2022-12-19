@@ -1,4 +1,6 @@
 def is_funny(string):
-    [False if char != 'h' else True for char in string]
+    return [True if letter == 'a' or letter == 'h' else False for letter in string]
 
-print(is_funny("hahahahahaha"))
+
+res = is_funny("haaaaahahahahhh")
+print(res)

@@ -1,3 +1,4 @@
+import csv
 def print_menu():
     """Prints the main menu"""
     print("""           
@@ -17,6 +18,7 @@ def print_menu():
 16) Top 3 items
 17) Search by pattern
 18) Save
+19) Save CSV format
             """)
 
 
@@ -139,11 +141,18 @@ def string_to_dict(shopping_string):
 
 
 def save_shoplist(shopping_dict):
-    shopping_file = open(r"C:\Users\Eitan\PycharmProjects\School", "w")
+    shopping_file = open(r"C:\Users\Eitan\PycharmProjects\School\ShoppingList\shoppinglist.txt", "w")
 
     shopping_file.write(str(shopping_dict))
 
     shopping_file.close()
+
+
+def save_shoplist_csv(shopping_dict):
+    shop_list = csv.writer(open(r"C:\Users\Eitan\PycharmProjects\School\ShoppingList\shoppinglist.csv", "w"))
+
+    for key,value in shopping_dict.items():
+        shop_list.writerow([key, value])
 
 
 def menu(shopping_dict, users):
@@ -195,6 +204,8 @@ def menu(shopping_dict, users):
                 search_pattern(shopping_dict, pattern)
             case 18:
                 save_shoplist(shopping_dict)
+            case 19:
+                save_shoplist_csv(shopping_dict)
             case _:
                 print("Invalid input")
 
