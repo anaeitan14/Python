@@ -124,4 +124,6 @@ if __name__ == "__main__":
             animal.breath_fire()
 
     print(Animal.zoo_name)
+    print(Animal.zoo_name)
+
 
