@@ -13,4 +13,4 @@ def read_file(file_name):
 
 
 
-print(read_file("name_length.txtt"))
+print(read_file("name_length.txt"))
