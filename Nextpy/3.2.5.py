@@ -8,9 +8,9 @@ def read_file(file_name):
         cont = content.replace("r", f.read())
         f.close()
     finally:
-        print(cont)
+        return cont
 
 
 
 
-read_file("name_length.txtt")
+print(read_file("name_length.txtt"))
