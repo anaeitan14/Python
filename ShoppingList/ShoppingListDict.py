@@ -143,9 +143,11 @@ def string_to_dict(shopping_string):
 def save_shop_list(users):
     shopping_file = open(r"C:\Users\Eitan\PycharmProjects\School\ShoppingList\shoppinglist.txt", "w")
 
-    print(users.items())
+    print(users)
 
     for key, value in users.items():
+        print(key)
+        print(value)
         user = str(key)+" "+str(value)
         shopping_file.write(user)
 
@@ -155,7 +157,7 @@ def save_shop_list(users):
 def save_shoplist_csv(users):
     shop_list = csv.writer(open(r"C:\Users\Eitan\PycharmProjects\School\ShoppingList\shoppinglist.csv", "w"))
 
-    print(users.items())
+    print(users)
 
     for key, value in users.items():
         shop_list.writerow([key, value])
