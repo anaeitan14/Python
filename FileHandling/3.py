@@ -63,12 +63,7 @@ def check_student_test(file_name):
     f.close()
 
     for i in range(len(student_answer)):
-        print("be",real_answer[i])
-        print("no",student_answer[i][:-1])
-        if student_answer[i][:-1] == real_answer[i]:
-            print(student_answer[i])
-            print(real_answer[i])
-
+        if int(student_answer[i][:-1]) == real_answer[i]:
             score+=10
 
     return score
