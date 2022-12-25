@@ -140,20 +140,25 @@ def string_to_dict(shopping_string):
     return new_dict
 
 
-def save_shoplist(shopping_dict):
+def save_shop_list(users):
     shopping_file = open(r"C:\Users\Eitan\PycharmProjects\School\ShoppingList\shoppinglist.txt", "w")
 
-    shopping_file.write(str(shopping_dict))
+    print(users.items())
+
+    for key, value in users.items():
+        user = str(key)+" "+str(value)
+        shopping_file.write(user)
 
     shopping_file.close()
 
 
-def save_shoplist_csv(shopping_dict):
+def save_shoplist_csv(users):
     shop_list = csv.writer(open(r"C:\Users\Eitan\PycharmProjects\School\ShoppingList\shoppinglist.csv", "w"))
 
-    for key,value in shopping_dict.items():
-        shop_list.writerow([key, value])
+    print(users.items())
 
+    for key, value in users.items():
+        shop_list.writerow([key, value])
 
 def menu(shopping_dict, users):
     """Main menu of the application"""
@@ -203,9 +208,9 @@ def menu(shopping_dict, users):
                 pattern = input("Enter a pattern to search by: ")
                 search_pattern(shopping_dict, pattern)
             case 18:
-                save_shoplist(shopping_dict)
+                save_shop_list(users)
             case 19:
-                save_shoplist_csv(shopping_dict)
+                save_shoplist_csv(users)
             case _:
                 print("Invalid input")
 
