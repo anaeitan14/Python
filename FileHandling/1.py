@@ -7,5 +7,7 @@ def one(file_name, index):
         return
     print(words[index])
 
+    f.close()
+
 if __name__ == "__main__":
     one("test.txt", 2)

@@ -1,33 +1,44 @@
 import random
 
-def three():
-    generate_calculations()
-    questions = open("math.txt", "r")
-    solutions = []
+def generate_solution():
+    questions = open('questions.txt', "r")
+    calculations = []
+    results = []
     for calc in questions.readlines():
         first_num = calc[:2]
         operation = calc[3:4]
         second_num = calc[5:7]
+
         match operation:
             case "+":
-                solutions.append(first_num + " " + operation + " " + second_num + " = " + str(int(first_num)+int(second_num)))
+                calculations.append(first_num + " " + operation + " " + second_num + " = " + str(int(first_num)+int(second_num)))
+                results.append(int(first_num)+int(second_num))
             case "-":
-                solutions.append(first_num + " " + operation + " " + second_num + " = " + str(int(first_num)-int(second_num)))
+                calculations.append(first_num + " " + operation + " " + second_num + " = " + str(int(first_num)-int(second_num)))
+                results.append(int(first_num) - int(second_num))
+
             case "*":
-                solutions.append(first_num + " " + operation + " " + second_num + " = " + str(int(first_num)*int(second_num)))
+                calculations.append(first_num + " " + operation + " " + second_num + " = " + str(int(first_num)*int(second_num)))
+                results.append(int(first_num) * int(second_num))
+
             case "/":
-                solutions.append(first_num + " " + operation + " " + second_num + " = " + str(int(first_num)//int(second_num)))
+                calculations.append(first_num + " " + operation + " " + second_num + " = " + str(int(first_num)//int(second_num)))
+                results.append(int(first_num) // int(second_num))
 
         questions.close()
 
-        solutions_file = open("solutions.txt", "w")
+        solutions_file = open("question_solutions.txt", "w")
 
-        for solution in solutions:
-            solutions_file.write(solution+"\n")
+        for line in calculations:
+            solutions_file.write(line+"\n")
+
+        solutions_file.close()
+
+    return results
 
 
 def generate_calculations():
-    questions = open("math.txt", "w")
+    questions = open("questions.txt", "w")
     op = ["+","-","/","*"]
 
     for i in range(10):
@@ -38,5 +49,39 @@ def generate_calculations():
         questions.write(calculation+"\n")
         questions.write
 
+    questions.close()
+
+
+def check_student_test(file_name):
+    f = open(file_name, "r")
+    score = 0
+
+    student_answer = []
+    real_answer = generate_solution()
+    for calc in f.readlines():
+        student_answer.append(calc[10:])
+    f.close()
+
+    for i in range(len(student_answer)):
+        print("be",real_answer[i])
+        print("no",student_answer[i][:-1])
+        if student_answer[i][:-1] == real_answer[i]:
+            print(student_answer[i])
+            print(real_answer[i])
+
+            score+=10
+
+    return score
+
+
+def check_students(file1_name,file2_name,file3_name):
+    s1_score = check_student_test(file1_name)
+    s2_score = check_student_test(file2_name)
+    s3_score = check_student_test(file3_name)
+
+    print(s1_score,s2_score,s3_score)
+
+
 if __name__ == "__main__":
-    three()
+    check_students("tal_solution.txt","yotam_solution.txt","david_solution.txt")
+
