@@ -1,7 +1,7 @@
 import random
 
 def generate_solution():
-    questions = open('questions.txt', "r")
+    questions = open('test_files/questions.txt', "r")
     calculations = []
     results = []
     for calc in questions.readlines():
@@ -27,7 +27,7 @@ def generate_solution():
 
         questions.close()
 
-        solutions_file = open("question_solutions.txt", "w")
+        solutions_file = open("test_files/question_solutions.txt", "w")
 
         for line in calculations:
             solutions_file.write(line+"\n")
@@ -38,7 +38,7 @@ def generate_solution():
 
 
 def generate_calculations():
-    questions = open("questions.txt", "w")
+    questions = open("test_files/questions.txt", "w")
     op = ["+","-","/","*"]
 
     for i in range(10):
@@ -78,5 +78,5 @@ def check_students(file1_name,file2_name,file3_name):
 
 
 if __name__ == "__main__":
-    check_students("tal_solution.txt","yotam_solution.txt","david_solution.txt")
+    check_students("test_files/tal_solution.txt","test_files/yotam_solution.txt","test_files/david_solution.txt")
 
