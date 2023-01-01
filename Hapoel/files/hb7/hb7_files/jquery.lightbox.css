@@ -1,0 +1,114 @@
+HTML {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; HEIGHT: 100%; PADDING-TOP: 0px
+}
+BODY {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; HEIGHT: 100%; PADDING-TOP: 0px
+}
+#lightbox {
+	Z-INDEX: 100; POSITION: absolute; BORDER-BOTTOM-STYLE: none; TEXT-ALIGN: center; PADDING-BOTTOM: 0px; LINE-HEIGHT: 0; BORDER-RIGHT-STYLE: none; MARGIN: 0px; OUTLINE-STYLE: none; PADDING-LEFT: 0px; WIDTH: 100%; BOTTOM: auto; PADDING-RIGHT: 0px; DISPLAY: block; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; FLOAT: none; LETTER-SPACING: normal; HEIGHT: auto; COLOR: #333333; CLEAR: none; BORDER-LEFT-STYLE: none; TOP: 0px; RIGHT: auto; WORD-SPACING: normal; TEXT-DECORATION: none; PADDING-TOP: 0px; LEFT: 0px
+}
+#lightbox-overlay {
+	Z-INDEX: 100; POSITION: absolute; BORDER-BOTTOM-STYLE: none; TEXT-ALIGN: center; PADDING-BOTTOM: 0px; LINE-HEIGHT: 0; BORDER-RIGHT-STYLE: none; MARGIN: 0px; OUTLINE-STYLE: none; PADDING-LEFT: 0px; WIDTH: 100%; BOTTOM: auto; PADDING-RIGHT: 0px; DISPLAY: block; BORDER-TOP-STYLE: none; BACKGROUND: none transparent scroll repeat 0% 0%; FLOAT: none; LETTER-SPACING: normal; HEIGHT: auto; COLOR: #333333; CLEAR: none; BORDER-LEFT-STYLE: none; TOP: 0px; RIGHT: auto; WORD-SPACING: normal; TEXT-DECORATION: none; PADDING-TOP: 0px; LEFT: 0px
+}
+#lightbox A {
+	COLOR: #999999; TEXT-DECORATION: underline
+}
+#lightbox A:link {
+	COLOR: #999999; TEXT-DECORATION: underline
+}
+#lightbox A:visited {
+	COLOR: #999999; TEXT-DECORATION: underline
+}
+#lightbox A:hover {
+	COLOR: #999999; TEXT-DECORATION: underline
+}
+#lightbox-overlay {
+	Z-INDEX: 90; POSITION: fixed; BACKGROUND-COLOR: #000000; HEIGHT: 100%
+}
+#lightbox-overlay-text {
+	TEXT-ALIGN: right; LINE-HEIGHT: normal; MARGIN-TOP: 20px; COLOR: white; FONT-SIZE: 12px; CURSOR: default; MARGIN-RIGHT: 20px
+}
+#lightbox-overlay-text A {
+	COLOR: white
+}
+#lightbox-overlay-text A:hover {
+	COLOR: white
+}
+#lightbox-overlay-text A:visited {
+	COLOR: white
+}
+#lightbox-overlay-text A:link {
+	COLOR: white
+}
+#lightbox-overlay-text SPAN {
+	PADDING-LEFT: 5px; PADDING-RIGHT: 5px
+}
+#lightbox IMG {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; OUTLINE-STYLE: none; BORDER-TOP-STYLE: none; BORDER-LEFT-STYLE: none
+}
+#lightbox A IMG {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; OUTLINE-STYLE: none; BORDER-TOP-STYLE: none; BORDER-LEFT-STYLE: none
+}
+#lightbox A {
+	BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: none; OUTLINE-STYLE: none; BORDER-TOP-STYLE: none; BORDER-LEFT-STYLE: none
+}
+#lightbox-imageBox {
+	BORDER-BOTTOM: black 1px solid; POSITION: relative; BORDER-LEFT: black 1px solid; BACKGROUND-COLOR: white; MARGIN: 0px auto; WIDTH: 400px; HEIGHT: 400px; BORDER-TOP: black 1px solid; BORDER-RIGHT: black 1px solid
+}
+#lightbox-imageContainer {
+	PADDING-BOTTOM: 1px; PADDING-LEFT: 1px; PADDING-RIGHT: 1px; PADDING-TOP: 1px
+}
+#lightbox-loading {
+	POSITION: absolute; TEXT-ALIGN: center; LINE-HEIGHT: 0; WIDTH: 100%; HEIGHT: 25%; TOP: 40%; LEFT: 0%
+}
+#lightbox-nav {
+	Z-INDEX: 10; POSITION: absolute; WIDTH: 100%; HEIGHT: 100%; TOP: 0px; LEFT: 0px
+}
+#lightbox-nav-btnPrev {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 49%; PADDING-RIGHT: 0px; ZOOM: 1; DISPLAY: block; BACKGROUND: url(../images/blank.gif) no-repeat; HEIGHT: 100%; PADDING-TOP: 0px
+}
+#lightbox-nav-btnNext {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 49%; PADDING-RIGHT: 0px; ZOOM: 1; DISPLAY: block; BACKGROUND: url(../images/blank.gif) no-repeat; HEIGHT: 100%; PADDING-TOP: 0px
+}
+#lightbox-nav-btnNext {
+	FLOAT: left; RIGHT: auto; LEFT: 0px
+}
+#lightbox-nav-btnPrev {
+	FLOAT: right; RIGHT: 0px; LEFT: auto
+}
+#lightbox-infoBox {
+	PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #ffffff; MARGIN: 0px auto; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px Arial, Helvetica, sans-serif; PADDING-TOP: 0px
+}
+#lightbox-infoContainer {
+	PADDING-BOTTOM: 5px; LINE-HEIGHT: normal; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; COLOR: #666; PADDING-TOP: 5px
+}
+#lightbox-infoHeader {
+	TEXT-ALIGN: center; WIDTH: 100%
+}
+#lightbox-caption {
+	TEXT-ALIGN: justify
+}
+#lightbox-caption-title {
+	FONT-WEIGHT: bold
+}
+#lightbox-caption-description {
+	FONT-WEIGHT: normal
+}
+#lightbox-infoFooter {
+	MARGIN-TOP: 3px; COLOR: #999999
+}
+#lightbox-currentNumber {
+	TEXT-ALIGN: left; WIDTH: 49%; DISPLAY: block; FLOAT: left
+}
+#lightbox-close {
+	TEXT-ALIGN: right; WIDTH: 45%; DISPLAY: block; FLOAT: right
+}
+#lightbox-close-button {
+	PADDING-LEFT: 30%
+}
+#lightbox-close-button:hover {
+	COLOR: #666666
+}
+#lightbox-infoContainer-clear {
+	VISIBILITY: hidden; CLEAR: both
+}

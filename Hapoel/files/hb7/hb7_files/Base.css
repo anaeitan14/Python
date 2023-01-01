@@ -1,0 +1,54 @@
+.clearBoth {
+	CLEAR: both
+}
+.center {
+	TEXT-ALIGN: center
+}
+.bold {
+	FONT-WEIGHT: bold
+}
+.normal {
+	FONT-WEIGHT: normal
+}
+.left {
+	TEXT-ALIGN: left
+}
+.right {
+	TEXT-ALIGN: right
+}
+.fLeft {
+	FLOAT: left
+}
+.fRight {
+	FLOAT: right
+}
+.justify {
+	TEXT-ALIGN: justify
+}
+.vAlign {
+	VERTICAL-ALIGN: middle
+}
+.normalLineHight {
+	LINE-HEIGHT: normal
+}
+.rtl {
+	DIRECTION: rtl
+}
+.ltr {
+	DIRECTION: ltr
+}
+.hide {
+	DISPLAY: none
+}
+.cursor {
+	CURSOR: pointer
+}
+.fsize16 {
+	FONT-SIZE: 16px
+}
+.fsize14 {
+	FONT-SIZE: 14px
+}
+.fsize12 {
+	FONT-SIZE: 12px
+}
