@@ -28,7 +28,6 @@ def make_html(player_info, fields):
     html_text = html_file.read()
     html_file.close()
 
-
     for player in player_info.keys():
         f = open(f"files/hb7/{player}.htm", "w", encoding="utf-8")
         player_html = html_text
