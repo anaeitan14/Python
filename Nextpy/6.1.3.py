@@ -13,6 +13,5 @@ button = tk.Button(window, text="Click to find out!", width=15,height=5,command=
 birthday.pack()
 button.pack()
 
-
 window.mainloop()
 
