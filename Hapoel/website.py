@@ -1,36 +1,41 @@
 import csv
 
+HTML_TEMPLATE = r"files/hb7/template.htm"
+PLAYERS_CSV = r"files/players.csv"
+
 def read_info():
-    #read the csv file and save the header of each column in fields
-    f = open(r"files/players.csv", 'r')
-    players = csv.reader(f)
-    players_dict = {}
-    fields = next(players)
+    """read the csv file and save the header of each column in csv_fields,
+       go over all the players in the csv file, make a new dictionary for each id and assign field values"""
+    with open(PLAYERS_CSV, 'r') as f:
+        players = csv.reader(f)
+        players_dict = {}
+        csv_fields = next(players)
+        player_index = 1
 
-    for player in players: #go over all the players in the csv file, make a new dictionary for each id and assign field values
-        players_dict[player[-1]] = {}
-        index = 0
-        for field in fields:
-            players_dict[player[-1]][field] = player[index] #assign new dictionary for each field assign value from player
-            index+=1
-    print(players_dict)
-    f.close()
+        for player in players:
+            players_dict[player_index] = {}
+            field_index = 0
+            for field in csv_fields:
+                players_dict[player_index][field] = player[field_index]
+                field_index+=1
+            player_index += 1
 
-    return players_dict, fields
+        return players_dict, csv_fields
 
-def make_html(player_info, fields):
-    html_file = open(r"files/hb7/template.htm", "r", encoding="utf-8")
-    html_text = html_file.read()
-    html_file.close() #copy html template into string to use as template for each player html
+def make_html(player_info, csv_fields):
+    """copy html template into string to use as template for each player html,
+        go over every player in the dict and make a new file for them,
+        replace every field from the csv headers with values, write the modified html into the new file"""
+    with open(HTML_TEMPLATE , "r", encoding="utf-8") as html_file:
+        html_text = html_file.read()
 
-    for player in player_info.keys(): #go over every player in the dict and make a new file for them
-        f = open(f"files/hb7/{player}.htm", "w", encoding="utf-8")
-        player_html = html_text
-        for field in fields:
-            player_html = player_html.replace(f"%%{field}%%", player_info[player][field]) #replace every field from the csv header line with values
-        f.write(player_html) #write the modified html into the new file
-        f.close()
+    for player in player_info.keys():
+        with open(f"files/hb7/{player_info[player]['id']}.htm", "w", encoding="utf-8") as f:
+            player_html = html_text
+            for field in csv_fields:
+                player_html = player_html.replace(f"%%{field}%%", player_info[player][field])
+            f.write(player_html)
 
 if __name__ == "__main__":
-    players_info, fields = read_info()
-    make_html(players_info, fields)
+    players_info, csv_fields = read_info()
+    make_html(players_info, csv_fields)
