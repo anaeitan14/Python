@@ -5,7 +5,7 @@ PLAYERS_CSV = r"files/players.csv"
 
 def read_info():
     """read the csv file and save the header of each column in csv_fields,
-       go over all the players in the csv file, make a new dictionary for each id and assign field values"""
+       go over all the players in the csv file, make a new dictionary for each player and assign field values"""
     with open(PLAYERS_CSV, 'r') as f:
         players = csv.reader(f)
         players_dict = {}
